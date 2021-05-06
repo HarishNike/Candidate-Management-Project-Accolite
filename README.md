@@ -6,10 +6,19 @@
 - Provided with oauth authenticated users 
 
 Note:
+
+Language and tools:
+
 -Java Spring Framework
 -Angular (Front end)
 -Mysql Database  
 -Jdbc Template for db connectivity.
+
+Platform
+
+STS for spring framework
+
+Visual studio code for angular
 
 Home Page-Page once user gets logged in 
 
