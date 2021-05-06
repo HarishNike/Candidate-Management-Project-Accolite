@@ -30,7 +30,7 @@ Authentication a;
 //    	OAuth2AccessTokenResponse response=authentication;
        OAuth2AuthenticationToken oauthtoken=( OAuth2AuthenticationToken)authentication;
     	OAuth2AuthorizedClient client=clientService.loadAuthorizedClient(oauthtoken.getAuthorizedClientRegistrationId(),oauthtoken.getName());
-//    	String token=client.getAccessToken().getTokenValue();
+    	token=client.getAccessToken().getTokenValue();
     	OAuth2RefreshToken refreshToken = new OAuth2RefreshToken("refresh-token", client.getAccessToken().getIssuedAt());	
     	Instant r=client.getAccessToken().getExpiresAt();
     	System.out.println("Expiration time "+refreshToken.getExpiresAt());
@@ -55,8 +55,8 @@ Authentication a;
     	String a1=cook.getValue();System.out.println("max age"+cook.getMaxAge());
 //     System.out.println("ithu cookie"+a1);
 //     System.out.println("ithu token"+token);
-    	if(timeElapsed.toMillis()<=190000) {System.out.println("equal than"); return a;}
-     System.out.println("not equal ahm");
+    	if(timeElapsed.toMillis()<=190000) { return a;}
+     
      return null;
     
     }
