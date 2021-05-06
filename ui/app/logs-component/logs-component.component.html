@@ -1,0 +1,51 @@
+<style>
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+} */
+* {box-sizing: border-box;}
+
+body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #68a1e2;
+  padding: 20px 10px;
+}
+</style>
+<h1 class="header" id ="header" >
+    View Logs
+ </h1>
+
+
+<br>
+<!-- <div class="some"><div class="one"><table class="aa"><input type="checkbox" id="one" checked></table></div></div> -->
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<div class="container">
+    <div class="container">
+        <div class="row col-md-6 col-md-offset-2 custyle"> 
+            <table  class="table table-striped custab">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                       
+                        <th>Operation</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let user of users ">
+
+                <!-- | paginate: { itemsPerPage: 5, currentPage: p }" > -->
+                    <tr >
+                        <td>{{user.name}}</td>
+                        <td>{{user.operation}}</td>
+                        <td>{{user.date}}</td>
+        
+                    </tr>
+</tbody></table></div></div></div>
