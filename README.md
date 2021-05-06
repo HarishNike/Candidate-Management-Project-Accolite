@@ -16,9 +16,8 @@ Language and tools:
 
 Platform
 
-STS for spring framework
-
-Visual studio code for angular
+-STS for spring framework
+-Visual studio code for angular
 
 Home Page-Page once user gets logged in 
 
