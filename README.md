@@ -11,6 +11,10 @@ Home Page-Page once user gets logged in
 
 ![front-page](https://user-images.githubusercontent.com/49608687/117281873-bd9b0700-ae81-11eb-9111-ff9c04d804db.JPG)
 
+Unauthenticated Users only accessible for login page 
+
+![login](https://user-images.githubusercontent.com/49608687/117283968-f805a380-ae83-11eb-8e3f-29019d551549.JPG)
+
 Trends on various datasets
 
 ![trends1](https://user-images.githubusercontent.com/49608687/117282344-444fe400-ae82-11eb-8df8-add70ace648f.JPG)
