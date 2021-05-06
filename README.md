@@ -31,6 +31,8 @@ View-Edit-Delete
 
 ![view-edit-delete](https://user-images.githubusercontent.com/49608687/117282483-6ea1a180-ae82-11eb-9587-62433efe990e.JPG)
 
+
+
 Front End Testing using Karma
 
 ![unit-test-front-end](https://user-images.githubusercontent.com/49608687/117282687-a7417b00-ae82-11eb-80a5-6a49d8dd8e45.JPG)
@@ -38,6 +40,14 @@ Front End Testing using Karma
 Backend Testing using Junit
 
 ![junit-test-backend](https://user-images.githubusercontent.com/49608687/117282651-9c86e600-ae82-11eb-9a8e-184041a8b8ca.JPG)
+
+
+Searchable logs on front end
+
+
+![logs](https://user-images.githubusercontent.com/49608687/117284156-2b483280-ae84-11eb-8711-eee3578d6e7f.JPG)
+
+
 
 
 
