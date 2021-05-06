@@ -6,10 +6,10 @@
 - Provided with oauth authenticated users 
 
 Note:
-  -Java Spring framework
-  -Angular (Front end)
-  -Mysql Database  
-  -Jdbc Template for db connectivity.
+-Java Spring Framework
+-Angular (Front end)
+-Mysql Database  
+-Jdbc Template for db connectivity.
 
 Home Page-Page once user gets logged in 
 
