@@ -4,6 +4,7 @@
 - View Trends on various attributes(skills,jobDescription,location)
 - Display Log Information
 - Provided with oauth authenticated users 
+
 Note:
   -Java Spring framework
   -Angular (Front end)
