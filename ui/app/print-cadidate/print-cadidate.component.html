@@ -1,0 +1,172 @@
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {box-sizing: border-box;}
+
+body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #68a1e2;
+  padding: 20px 10px;
+}
+
+
+.topnav {
+  overflow: hidden;
+  width: 100%;
+  background-color: #333;
+}
+
+</style>
+<!-- card-header bg-info -->
+
+<div class="header" id="header"> <b style="font-size: 40px;">Candidate View</b></div>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">  
+<div class="container">
+
+    <form #userForm="ngForm">
+
+
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" readonly name="firstName" value="{{user.name}}">
+        </div>
+
+        <div class="form-group">
+            <label>Email ID</label>
+            <input type="text" readonly name="email" value="{{user.email}}">
+            
+        </div>
+        
+        <div class="form-group">
+            <label>Location</label>
+            <input type="text" value="{{user.location}}">
+        </div>
+
+        <div class="form-group">
+            <label>Feedback</label>
+            <input type="text" readonly name="feedback" value="{{user.feedback}}" >
+            
+        </div>
+
+        <div class="form-group" readonly><b>Skill Set</b><br><ul>
+            <div *ngIf="func(user.android)"><li>Android</li></div>
+                          <div *ngIf="func(user.angular)"><li>Angular</li></div>
+                           <div *ngIf="func(user.react)"><li>React</li></div>
+                          <div *ngIf="func(user.java)"><li>Java</li></div>
+                       <div *ngIf="func(user.python)"><li>Python</li></div>
+                        <div *ngIf="func(user.javascript)"><li>JavaScript</li></div>
+                       <div *ngIf="func(user.cpp)"><li>C++</li></div>
+                        </ul>
+        </div>
+        <!-- <div class="form-group">
+             <label>Skills</label>
+            <input type="text" required #skill="ngModel" [class.is-invalid]="skill.invalid && skill.touched"
+                class="form-control" name="skill" [(ngModel)]="userModel.skills">
+           
+        </div> -->
+        <div class="form-group">
+            <label>Tentative Joining Data</label>
+            <input type="date" readonly  name="joindate" value="{{user.joindate}}">
+           
+        </div>
+        <div class="form-group">
+            <label>Institution</label>
+            <input type="text" readonly name="institution" value="{{user.institution}}">
+        </div>
+
+        <div class="form-group">
+            <label>Contact Number</label>
+            <input type="tel" readonly value="{{user.contact}}"
+                name="contactNumber" >
+            <!--<small class="text-danger" [class.d-none]="contactNumber.valid || contactNumber.untouched">Contact number is required and must be of 10 digits</small>-->
+        </div>
+
+
+        <div class="form-group">
+            <label>Job Description</label>
+            <input readonly 
+                name="jobDescription" value="{{user.jobDescription}}">
+            
+        </div>
+
+        <br>
+        
+
+      </form>
+      </div>

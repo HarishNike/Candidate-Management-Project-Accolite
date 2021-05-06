@@ -1,0 +1,208 @@
+<style>
+/* * {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+
+/* .container {
+  border-radius: 15px;
+  background-color: #f2f2f2;
+  padding: 30px;
+} */
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+} */
+* {box-sizing: border-box;}
+
+body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #68a1e2;
+  padding: 20px 10px;
+}
+</style>
+<h1 class="header" id ="header" >
+    View Candidates
+ </h1>
+
+<p></p>
+<input class="searchcontent" type="text" id="searchcontent" name="searchcontent" [(ngModel)]="searchcontent">
+
+<button type="button" class="btn btn-primary" id="center" (click)="searchGrad(searchcontent)">Search
+    Candidate</button>
+
+<br>
+<!-- <div class="some"><div class="one"><table class="aa"><input type="checkbox" id="one" checked></table></div></div> -->
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<div class="container">
+    <div class="container">
+        <div class="row col-md-6 col-md-offset-2 custyle"> 
+            <table  class="table table-striped custab">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                       
+                        <th>Email</th>
+                        <!-- <th>Feedback</th> -->
+                        <!-- <th>Location</th> -->
+                        <th>Joining Date</th>
+                        <th>Job Description</th>
+                        <!-- <th>Skills</th> -->
+                        <!-- <th>Contact Number</th> -->
+                        <!-- <th>Institution</th> -->
+                        <th>Delete</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let user of users | paginate: { itemsPerPage: 5, currentPage: p }" >
+                    <tr >
+                        <td>{{user.name}}</td>
+                        <td>{{user.email}}</td>
+                        <!-- <td>{{user.feedback}}</td> -->
+                        <!-- <td>{{user.location}}</td> -->
+                        <td>{{user.joindate}}</td>
+                        <td>{{user.jobDescription}}</td>
+                        <!-- <td>
+                            <div *ngIf="func(user.android)">Android</div>
+                            <div *ngIf="func(user.angular)">Angular</div>
+                            <div *ngIf="func(user.react)">React</div>
+                            <div *ngIf="func(user.java)">Java</div>
+                            <div *ngIf="func(user.python)">Python</div>
+                             <div *ngIf="func(user.javascript)">JavaScript</div>
+                            <div *ngIf="func(user.cpp)">C++</div>
+                        
+                        </td>
+                        <td>{{user.contact}}</td> -->
+                        <!-- <td>{{user.institution}}</td> -->
+                    <td class="text-center"><button class="btn btn-danger btn-xs"
+                                (click)="deleteCandidate(user.id)"><span class="glyphicon glyphicon-remove"></span>
+                                Delete</button></td>
+                        <td><button type="button" class="btn btn-primary" (click)="openEdit(user.id,user)">Edit</button>
+                        </td>
+                <td class="text-center"><button class="btn btn-danger btn-xs"
+                                (click)="viewCandidate(user.id)"><span class="glyphicon glyphicon-remove"></span>
+                                View</button></td>
+                    </tr>
+                       
+                        <div class="container" *ngIf="this.showedit==true && this.curr==user.id"> 
+                             <!-- && this.curr==user.email"> -->
+                            <br>
+                            <br>
+                            
+                                <div class="form-group">
+                                   <b style="font-size:20px"> <label>Feedback</label></b>
+                                    <textarea type="text" rows="2" cols="200" required #feedback="ngModel" [class.is-invalid]="feedback.invalid && feedback.touched" class="form-control" name="feedback" [(ngModel)]="user.feedback" size="150"></textarea>
+                                    <small class="text-danger" [class.d-none]="feedback.valid || feedback.untouched">Feedback is required</small>
+                                </div>
+                                <div class="search">
+                                    <b style="font-size:20px"> <label>Location</label></b>
+                                    <select required #location="ngModel" [class.is-invalid]="location.invalid && location.touched" class="custom-select" [(ngModel)]="user.location" name="location">
+                                        <option *ngFor="let l of Loc">{{l}}</option>
+                                    </select>
+                                    <small class="text-danger" [class.d-none]="location.valid || location.untouched">Please specify the location</small>
+                                </div>
+                                <!-- <input type="checkbox" name="newone" checked> -->
+                                <div class="search">
+                                    <b style="font-size:20px"> <label>Add skills</label></b><br> 
+                                    <input type="checkbox" id="cpp" value="cpp"  (change)="cppf(user)" >C++<br>
+                                     <input type="checkbox" id="java" value="java" (change)="j(user)"> Java<br>
+             <input type="checkbox" id="angular" value="angular" (change)="ange(user)">Angular  <br>
+ <input type="checkbox" id="react" value="react" (change)="re(user)"> React<br>
+             <input type="checkbox" id="python" value="python" (change)="pye(user)">Python  <br>
+ <input type="checkbox" id="javascript" value="javascript" (change)="jse(user)">JavaScript<br>
+ <input type="checkbox" id="android" value="android" (change)="an(user)"> Android Devolopment<br>
+        
+                                </div>
+                                <div class="search">
+                                    <b style="font-size:20px"> <label>Contact Number</label></b>
+                                    <input type="tel" required #contactNumber="ngModel" pattern="^\d{10}$" [class.is-invalid]="contactNumber.invalid && contactNumber.touched" class="form-control" name="contactNumber" [(ngModel)]="user.contact" >
+                                    
+                                    <div *ngIf="contactNumber.errors && ( contactNumber.invalid || contactNumber.touched )">
+                                        <small class="text-danger" *ngIf="contactNumber.errors.required">Contact number is required</small>
+                                        <small class="text-danger" *ngIf="contactNumber.errors.pattern">Contact number must be of 10 digits</small>        
+                                    </div>
+                                </div>
+                                <!-- <div class="search">
+                                    <label>Skills</label>
+                                    <input type="text" required #lastName="ngModel" [class.is-invalid]="lastName.invalid && lastName.touched"
+                                        class="form-control" name="lastName" [(ngModel)]="user.skills">
+                                    <small class="text-danger" [class.d-none]="lastName.valid || lastName.untouched">Last Name is
+                                        required</small>
+                                </div> -->
+                                
+                            
+                            <button class="btn btn-primary" type="submit" (click)="updateDetails(user.id,user)">Submit Details</button>
+                        
+                          </div>
+                 
+                   
+                </tbody>
+                <!-- <pagination-controls></pagination-controls> -->
+               
+            </table>
+             <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+    </div>
+</div>
