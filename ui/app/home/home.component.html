@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+
+* {box-sizing: border-box;}
+
+body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .header-right {
+    float: none;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  width: 100%;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<div class="container-xxl" style="font-family:Houschka Pro">
+        <nav class="navbar px-3 px-lg-0 navbar-expand-lg py-3 py-lg-0">
+            <a class="navbar-brand" href="/">
+                <img src="assets/images/accolite.png" class="navbar-image">
+            </a></nav></div>
+<!-- <div class="container-xxl">
+        <nav class="navbar px-3 px-lg-0 navbar-expand-lg py-3 py-lg-0">
+            
+                <img src="assets/images/accolite1.jpg" class="navbar-image">
+            </nav> -->
+          <div class="header">
+<h1>AU Management System</h1>
+<div class="header-right"> <button (click)="logout()" style="float: right;">Log Out</button></div> 
+</div>
+
+          
+          
+          
+          
+<!-- <img src="assets/images/accolite.png" alt=""><br><br> -->
+ <!-- jumbotron text-center -->
+
+  
+<body>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Accolite</title>
+<marquee direction="left"  style="color:rgb(11, 11, 19);font-size: 30px;">Hello {{name}} !! Welcome to the AU Management Portal</marquee>
+<!-- <button (click)="logout()">Logout</button> -->
+
+
+<!-- <div class="topnav"> -->
+<!-- <div class="" style="padding:2%;background-color: rgb(216, 221, 221);">
+ <a routerLink="newone"> <h1 style="font-size:30px; font-weight: 30;">Candidate Management</h1></a>
+  <p >A Component of maintaining grad details</p>
+  </div>
+<br>
+<div class="" style="padding:2%;background-color: rgb(216, 221, 221);">
+ <a routerLink="notfound"> <h1 style="font-size:30px;font-weight:30">Opportunity Management</h1></a>
+  <p style="font-size:19px;">Maintains Opportunities and demands.</p>
+  </div>
+  <br>
+<div class="" style="padding:2%;background-color: rgb(216, 221, 221);">
+ <a routerLink="notfound"> <h1 style="font-size:30px;font-weight:30">Assessment</h1></a>
+  <p style="font-size:19px;">Manage  Trainings  and Assessment</p>
+  </div>
+  <br>
+<div class="" style="padding:2%;background-color: rgb(216, 221, 221);">
+ <a routerLink="notfound"> <h1 style="font-size:30px;font-weight:30">Course Management</h1></a>
+  <p style="font-size:19px;">Component to provide courses and trainers information</p>
+  </div>
+<br>
+<div class="" style="padding:2%;background-color: rgb(216, 221, 221);">
+ <a routerLink="notfound"> <h1 style="font-size:30px;font-weight:30">Onboarding Portal</h1></a>
+ 
+  </div> -->
+<br>
+  <!--   
+  <a  href="gfdsfcreate">Opportunity Management</a>
+  <a routerLink="create">Assessment</a>
+  <a href="#about">About</a>
+  <a (click)="logout()">Log Out</a>
+  -->
+<!-- </div> -->
+ <!-- <div *ngIf="issign==true"><app-tabs-bar></app-tabs-bar></div> -->
+
+ <div class="container-fluid px-3 py-5 p-lg-5" style="background-color: rgb(47, 47, 56);margin-top:10px;">
+    <div class="container-xxl">
+        <div class="col-12 px-0 py-5 text-white">
+        <h1 class="mb-4">SERVICES</h1>
+        <div class="col-12 px-0 pt-5" id="services">
+            <div id="carouselServicesControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="col-12 p-0">
+                            <div class="row text-center">
+                                <a routerLink="newone"  class="text-white col-md-4 mb-5 mb-lg-0 mx-auto d-inline-block">
+                                    <div class="image-container">
+                                        <img src="assets/images/candidate2.png" >
+                                    </div>
+                                    <div class="col-12 mt-4">
+                                        <div class="col-4 mx-auto" style="border-bottom: 1px dotted #FFF;"></div>
+                                    </div>
+                                    <h4 class="mt-4">
+                                        Candidate Management
+                                    </h4>
+                                    <button class="btn btn-link font-weight-bold text-uppercase px-0 text-white text-left">
+                                       A Component of maintaining grad details
+                                    </button>
+                                </a><a routerLink="notfound"  class="text-white col-md-4 mb-5 mb-lg-0 mx-auto d-inline-block">
+                                    <div class="image-container">
+                                        <img src="assets/images/opp.png" >
+                                    </div>
+                                    <div class="col-12 mt-4">
+                                        <div class="col-4 mx-auto" style="border-bottom: 1px dotted #FFF;"></div>
+                                    </div>
+                                    <h4 class="mt-4">
+                                        Opportunity Management
+                                    </h4>
+                                    <button class="btn btn-link font-weight-bold text-uppercase px-0 text-white text-left">
+                                     Maintains Opportunities and demands
+                                    </button>
+                                </a><a routerLink="notfound"  class="text-white col-md-4 mb-5 mb-lg-0 mx-auto d-inline-block">
+                                    <div class="image-container">
+                                        <img src="assets/images/course2.png" >
+                                    </div>
+                                    <div class="col-12 mt-4">
+                                        <div class="col-4 mx-auto" style="border-bottom: 1px dotted #FFF;"></div>
+                                    </div>
+                                    <h4 class="mt-4">
+                                        Course Management
+                                    </h4>
+                                    <button class="btn btn-link font-weight-bold text-uppercase px-0 text-white text-left">
+                                      Courses and trainers 
+                                    </button>
+                                </a><<a routerLink="notfound"  class="text-white col-md-4 mb-5 mb-lg-0 mx-auto d-inline-block">
+                                    <div class="image-container">
+                                        <img src="assets/images/assess.png" >
+                                    </div>
+                                    <div class="col-12 mt-4">
+                                        <div class="col-4 mx-auto" style="border-bottom: 1px dotted #FFF;"></div>
+                                    </div>
+                                    <h4 class="mt-4">
+                                        Assessment and Learning
+                                    </h4>
+                                    <button class="btn btn-link font-weight-bold text-uppercase px-0 text-white text-left">
+                                      Manage Trainings and Assessment
+                                    </button>
+                                </a><a routerLink="notfound"  class="text-white col-md-4 mb-5 mb-lg-0 mx-auto d-inline-block">
+                                    <div class="image-container">
+                                        <img src="assets/images/onboard1.png" >
+                                    </div>
+                                    <div class="col-12 mt-4">
+                                        <div class="col-4 mx-auto" style="border-bottom: 1px dotted #FFF;"></div>
+                                    </div>
+                                    <h4 class="mt-4">
+                                        Onboarding Portal
+                                    </h4>
+                                    <button class="btn btn-link font-weight-bold text-uppercase px-0 text-white text-left">
+                                      
+                                    </button>
+                                </a>
+                              </div></div></div></div></div></div></div></div></div>
+ <router-outlet></router-outlet>
